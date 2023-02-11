@@ -12,6 +12,8 @@ pnpm dev
 npm i next-themes
 npm install classnames
 npm install @next/font
+npm i @headlessui/react
+npm i @heroicons/react
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
