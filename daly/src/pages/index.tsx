@@ -12,8 +12,13 @@ export default function Home() {
     <div>
         <Container>
         <div className="flex flex-col justify-center max-w-3xl w-full mx-auto mb-16 border-gray-200 dark:border-gray-700">
+        <div className='mb-16'>
         <Homepage/>
+        </div>
+        <div>
         <SearchForm/>
+        </div>
+        
         </div>
         </Container>
     </div>
