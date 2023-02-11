@@ -7,7 +7,7 @@ export default function SearchForm() {
     const handleSubmit = (e) => { 
         e.preventDefault();
         let data = {searchText};
-        fetch('/api/api', {
+        fetch('/api/get_reversed_from_words_api', {
             method: 'POST',
             headers: {
               'Accept': 'application/json, text/plain, */*',
