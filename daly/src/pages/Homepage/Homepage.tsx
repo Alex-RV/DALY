@@ -3,13 +3,13 @@ import { Inter } from '@next/font/google'
 import { Oswald } from '@next/font/google'
 
 const oswald = Oswald({
-    weight: '400',
+    weight: '700',
     subsets: ['latin']
 })
 
 const Homepage = () => {
   return (
-    <div >
+    <div>
         <div className={oswald.className}>
             <h1 className='flex text-8xl justify-center drop-shadow-xl'>
                 <div className=' text-green-600'  >E</div>
