@@ -2,6 +2,7 @@ import cn from 'classnames';
 import Link from 'next/link';
 // import useDelayedRender from 'use-delayed-render';
 import React, { useState, useEffect, createRef } from 'react';
+import styles from '../src/styles/mobile-menu.module.css'
 
 export default function MobileMenu() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -34,7 +35,7 @@ export default function MobileMenu() {
     <div className='visible md:hidden'>
       <button
         className={cn(
-            // styles.burger,
+            styles.burger,
              'bg-transparent w-[40px] h-[40px] relative visible md:hidden')}
         aria-label="Toggle menu"
         type="button"
@@ -46,7 +47,7 @@ export default function MobileMenu() {
       {/* {isMenuMounted && ( */}
         <ul
           className={cn(
-            // styles.menu,
+            styles.menu,
             'flex flex-col absolute bg-gray-100 dark:bg-gray-900',
             // isMenuRendered && styles.menuRendered
           )}
