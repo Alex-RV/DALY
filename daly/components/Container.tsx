@@ -43,7 +43,7 @@ export default function Container(props) {
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"/>
       </Head>
-      <div className="flex flex-col justify-center px-8">
+      <div className="flex flex-col justify-center px-8 bottom-0">
         <nav className="flex items-center  justify-between w-full   relative max-w-3xl mx-auto pt-8  sm:pb-5  text-gray-900 bg-gray-50  dark:bg-[#131415] bg-opacity-60 dark:text-gray-100">
           <div className="ml-[-0.60rem] ">
             <MobileMenu />

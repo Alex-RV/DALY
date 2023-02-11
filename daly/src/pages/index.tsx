@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import Container from 'components/Container'
 import Homepage from './Homepage/Homepage'
-import Test from 'components/Test'
+import SearchForm from 'components/SearchForm'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -13,10 +13,9 @@ export default function Home() {
         <Container>
         <div className="flex flex-col justify-center max-w-3xl w-full mx-auto mb-16 border-gray-200 dark:border-gray-700">
         <Homepage/>
+        <SearchForm/>
         </div>
         </Container>
-      {/* <Test/> */}
-      {/* <Homepage/> */}
     </div>
 
         
