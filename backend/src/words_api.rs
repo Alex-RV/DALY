@@ -1,14 +1,14 @@
 use reqwest::Client;
-use serde::{Deserialize, Serialize};
+use serde::Deserialize;
 
-const API_KEY: &str = include_str!("./../.wordsapi");
+const API_KEY: &str = include_str!("./../.rapidapi");
 
 #[derive(Debug, Deserialize)]
 pub struct WordsApiRes {
     pub antonyms: Vec<String>,
 }
 
-pub async fn get_from_words_api(word: &str) -> Result<WordsApiRes, Box<dyn std::error::Error>> {
+pub async fn get_reversed_from_words_api(word: &str) -> Result<WordsApiRes, Box<dyn std::error::Error>> {
     let post_client = Client::new();
 
     Ok(post_client
