@@ -18,7 +18,9 @@ export default function Home() {
         <div>
         <SearchForm/>
         </div>
-        
+        <div>
+          
+        </div>
         </div>
         </Container>
     </div>
