@@ -10,6 +10,7 @@ pnpm dev
 ```
 <!-- yarn add use-delayed-render -->
 npm i next-themes
+npm install classnames
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
