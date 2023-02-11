@@ -18,7 +18,6 @@ export default function handler(
 
         for (let word of phrase.split(" ")) {
             let reversed = await get_reversed_from_words_api(word);
-            console.log(reversed);
             if (reversed.antonyms.length == 0) {
                 newPhrase += word;
             } else {
@@ -26,8 +25,6 @@ export default function handler(
             }
             newPhrase += " ";
         }
-
-        console.log(phrase);
 
         res.status(200).json({
             ok,
