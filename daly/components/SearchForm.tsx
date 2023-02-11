@@ -1,10 +1,26 @@
 import React, {useState, useEffect} from "react"
 
+
+
 export default function SearchForm() {
     const [searchText, setSearchText] = useState("");
+    const handleSubmit = (e) => { 
+        e.preventDefault();
+        let data = {searchText};
+        fetch('/api/api', {
+            method: 'POST',
+            headers: {
+              'Accept': 'application/json, text/plain, */*',
+              'Content-Type': 'application/json'
+            },
+        body: JSON.stringify(data)
+    })
+}
   return (
 <>
-<form className="flex items-center">   
+<form 
+onSubmit={handleSubmit}
+className="flex items-center">   
     <label htmlFor="simple-search" className="sr-only">Search</label>
     <div className="relative w-full">
         <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
