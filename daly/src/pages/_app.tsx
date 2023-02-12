@@ -7,6 +7,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
   <ThemeProvider attribute='class'>
     <Component {...pageProps} />
+    
   </ThemeProvider>
   </>
   )

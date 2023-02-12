@@ -12,6 +12,7 @@ export default function Document() {
       <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#5bbad5"/>
       <meta name="msapplication-TileColor" content="#da532c"/>
       <meta name="theme-color" content="#ffffff"/>
+      <link rel="icon" type="image/x-icon" href="/Daly.ico"/>
      </Head>
       <body>
         <Main />
