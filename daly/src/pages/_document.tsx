@@ -12,7 +12,7 @@ export default function Document() {
       <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#5bbad5"/>
       <meta name="msapplication-TileColor" content="#da532c"/>
       <meta name="theme-color" content="#ffffff"/>
-      <link rel="icon" type="image/x-icon" href="/Daly.ico"/>
+      <link rel="icon" type="image/x-icon" href="https://media.discordapp.net/attachments/1071575123531939941/1074041605213921330/C1EBFB85-BB38-43DC-826F-FBE33EA9DFB0.jpg"/>
      </Head>
       <body>
         <Main />
