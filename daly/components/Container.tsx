@@ -55,11 +55,9 @@ export default function Container(props) {
           <div className="ml-[-0.60rem] ">
             <MobileMenu />
             <NavItem href="/" text="Home" />
-            <NavItem href="/About" text="About" />
+            <NavItem href="/about" text="About" />
             <NavItem href="/team" text="Team" />
           </div>
-          <SearchForm dataCallBack={data => {
-            setSearchResponseData(data.link)}}/>
           <button
             aria-label="Toggle Dark Mode"
             type="button"
