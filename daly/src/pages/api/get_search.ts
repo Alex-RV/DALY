@@ -10,6 +10,7 @@ export interface Item {
 
 type Data = {
   items: [Item];
+  opposite: string;
 };
 
 export default function handler(
@@ -22,6 +23,7 @@ export default function handler(
     let searchRes = await get_search(reversed);
     res.status(200).json({
       items: searchRes.items,
+      opposite: reversed,
     });
   })();
 }
@@ -47,8 +49,7 @@ async function get_reversed(word: string): Promise<any> {
     method: "post",
     headers: {
       Accept: "application/json",
-      Authorization:
-        `Bearer ${process.env.OPENAI_API_KEY as string}`,
+      Authorization: `Bearer ${process.env.OPENAI_API_KEY as string}`,
       "Content-Type": "application/json",
     },
     body: JSON.stringify({

@@ -19,6 +19,7 @@ export default function SearchForm({dataCallBack}) {
         if (res.status === 200) {
           
           res.json().then(data =>{ 
+            setSearchText(data.opposite);
             if(data) {
                 dataCallBack(data)
             } else {
