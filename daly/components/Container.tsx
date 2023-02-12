@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { useTheme } from 'next-themes';
 import NextLink from 'next/link';
 import cn from 'classnames';
-
+import { Oswald } from '@next/font/google'
 
 import MobileMenu from './MobileMenu';
 import SearchForm from './SearchForm';
@@ -55,7 +55,7 @@ export default function Container(props) {
           <div className="ml-[-0.60rem] ">
             <MobileMenu />
             <NavItem href="/" text="Home" />
-            <NavItem href="/about" text="About" />
+            <NavItem href="/About" text="About" />
             <NavItem href="/team" text="Team" />
           </div>
           <SearchForm dataCallBack={data => {
