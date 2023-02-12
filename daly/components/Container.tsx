@@ -31,6 +31,7 @@ function NavItem({ href, text }) {
 export default function Container(props) {
   const [mounted, setMounted] = useState(false);
   const { resolvedTheme, setTheme } = useTheme();
+  const [searchResponseData, setSearchResponseData]= useState("");
   // After mounting, we have access to the theme
   useEffect(() => setMounted(true), []);
 
@@ -48,16 +49,17 @@ export default function Container(props) {
         className="flex flex-col justify-center mx-8 bg-gray-50 dark:bg-[#131415] ">
         {children}
       </main>
-      <div className="flex flex-col justify-center px-8 bottom-0">
-      <hr className="flex items-center  justify-between w-full   relative mx-auto pt-1  sm:pb-1 border-1 max-w-3xl border-gray-200 mb-6 dark:border-gray-800" />
-        <nav className="flex items-center  justify-between w-full   relative max-w-3xl mx-auto pt-8  sm:pb-5  text-gray-900 bg-gray-50  dark:bg-[#131415] bg-opacity-60 dark:text-gray-100">
+      <div className="flex flex-col justify-center px-8 bottom-0 fixed w-max-3xl w-full pb-2 bg-opacity-[90%] bg-gray-50   dark:bg-[#131415]">
+      <hr className="flex items-center  justify-between w-full   relative mx-auto pt-1  sm:pb-1 border-1 max-w-3xl border-gray-200 dark:border-gray-800" />
+        <nav className="flex items-center  justify-between w-full   relative max-w-3xl mx-auto  text-gray-900   dark:text-gray-100">
           <div className="ml-[-0.60rem] ">
             <MobileMenu />
             <NavItem href="/" text="Home" />
             <NavItem href="/about" text="About" />
             <NavItem href="/team" text="Team" />
           </div>
-          <SearchForm/>
+          <SearchForm dataCallBack={data => {
+            setSearchResponseData(data.link)}}/>
           <button
             aria-label="Toggle Dark Mode"
             type="button"

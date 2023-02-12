@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from "react"
+import { useRouter } from 'next/router'
 
 
-
-export default function SearchForm() {
+export default function SearchForm({dataCallBack}) {
+    const router = useRouter()
     const [searchText, setSearchText] = useState("");
     const handleSubmit = (e) => { 
         e.preventDefault();
@@ -14,8 +15,18 @@ export default function SearchForm() {
               'Content-Type': 'application/json'
             },
         body: JSON.stringify(data)
-    })
-}
+    }).then((res) => {
+        if (res.status === 200) {
+          
+          res.json().then(dataCallBack)
+          console.log('Response succeeded!');
+          router.push('/about')
+          
+        }
+        else{
+        }
+      })
+    }
   return (
 <>
 <form 
