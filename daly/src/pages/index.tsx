@@ -16,10 +16,10 @@ export default function Home() {
   const router = useRouter()
   const [searchResponseData, setSearchResponseData]= useState({items:[]});
   return (
-  <div className=' pt-40 bg-[#f9fafb] dark:bg-[#131415] '>
+  <div className=' pt-60 bg-[#f9fafb] dark:bg-[#131415] '>
         <div className='pb-40'>
         <div className="flex flex-col justify-center max-w-3xl w-full mx-auto mb-16 border-gray-200 dark:border-gray-700">
-        <div className='mb-16 mt-64'>
+        <div className='mb-16'>
         <Homepage/>
         </div>
         <div>
