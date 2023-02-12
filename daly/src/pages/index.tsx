@@ -21,7 +21,7 @@ export default function Home() {
   <div className=' pt-60 bg-[#f9fafb] dark:bg-[#131415] '>
         <div className=' pb-72'>
         <div className="flex flex-col justify-center max-w-3xl w-full mx-auto mb-16 border-gray-200 dark:border-gray-700">
-        <div className=''>
+        <div className=' pb-[30%]'>
         <Homepage/>
         </div>
         <div>
