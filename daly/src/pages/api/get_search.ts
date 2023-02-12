@@ -48,7 +48,7 @@ async function get_reversed(word: string): Promise<any> {
     headers: {
       Accept: "application/json",
       Authorization:
-        "Bearer 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",
+        `Bearer ${process.env.OPENAI_API_KEY as string}`,
       "Content-Type": "application/json",
     },
     body: JSON.stringify({

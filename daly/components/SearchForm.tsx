@@ -18,7 +18,14 @@ export default function SearchForm({dataCallBack}) {
     }).then((res) => {
         if (res.status === 200) {
           
-          res.json().then(dataCallBack)
+          res.json().then(data =>{ 
+            if(data) {
+                dataCallBack(data)
+            } else {
+                alert("Search API Limit. Slow down buddy.");
+            }
+
+          })
           console.log('Response succeeded!');
         //   router.push('/about')
           
