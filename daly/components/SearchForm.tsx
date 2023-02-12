@@ -20,7 +20,7 @@ export default function SearchForm({dataCallBack}) {
           
           res.json().then(dataCallBack)
           console.log('Response succeeded!');
-          router.push('/about')
+        //   router.push('/about')
           
         }
         else{
