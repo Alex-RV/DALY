@@ -31,7 +31,10 @@ export default function Home() {
         </div>
         <div>
           {searchResponseData.items.map(item => (
-            <div className='m-2 mb-4'>
+            <div
+            // @ts-ignore
+            key={item.formattedUrl}
+             className='m-2 mb-4'>
               <div>
                <a href={// @ts-ignore
                item.formattedUrl}>

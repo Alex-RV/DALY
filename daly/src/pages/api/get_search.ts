@@ -62,7 +62,7 @@ async function get_search(phrase: string): Promise<any> {
 async function get_reversed_from_words_api(word: string): Promise<any> {
   let fetchRes = await fetch(
     `https://wordsapiv1.p.rapidapi.com/words/${word}/antonyms`,
-    {
+    {// @ts-ignore
       headers: {
         "X-RapidAPI-Host": "wordsapiv1.p.rapidapi.com",
         "X-RapidAPI-Key": process.env.RAPID_API_KEY as string,
