@@ -1,18 +1,10 @@
 import cn from 'classnames';
 import Link from 'next/link';
-// import useDelayedRender from 'use-delayed-render';
 import React, { useState, useEffect, createRef } from 'react';
 import styles from '../src/styles/mobile-menu.module.css'
 
 export default function MobileMenu() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-//   const { isMenuMounted, setIsMenuMounted } = useDelayedRender(
-//     isMenuOpen,
-//     {
-//       enterDelay: 20,
-//       exitDelay: 300
-//     }
-//   );
 
   function toggleMenu() {
     if (isMenuOpen) {

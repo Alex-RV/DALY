@@ -27,7 +27,7 @@ export default function Home() {
         <div>
         <SearchForm dataCallBack={data => {
             setSearchResponseData(data)
-            console.log(searchResponseData)}}/>
+            console.log("After search!!",searchResponseData)}}/>
         </div>
         <div>
           {searchResponseData.items.map(item => (

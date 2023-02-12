@@ -8,7 +8,7 @@ export default function SearchForm({dataCallBack}) {
     const handleSubmit = (e) => { 
         e.preventDefault();
         let data = {searchText};
-        fetch('/api/get_search', {
+        fetch('/api/get_reversed_from_words_api', {
             method: 'POST',
             headers: {
               'Accept': 'application/json, text/plain, */*',
@@ -28,7 +28,6 @@ export default function SearchForm({dataCallBack}) {
 
           })
           console.log('Response succeeded!');
-        //   router.push('/about')
           
         }
         else{
