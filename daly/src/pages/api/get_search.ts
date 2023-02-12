@@ -1,5 +1,4 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import { reverse } from "dns";
 import type { NextApiRequest, NextApiResponse } from "next";
 
 export interface Item {
@@ -19,23 +18,7 @@ export default function handler(
 ) {
   (async () => {
     let phrase = req.body.searchText;
-    let reversed = "";
-
-    for (let word of phrase.split(" ")) {
-      console.log(">" + word + "<");
-      let wordReversed = await get_reversed_from_words_api(word);
-      if (wordReversed.antonyms.length == 0) {
-        reversed += word;
-      } else {
-        reversed += wordReversed.antonyms[0];
-      }
-      reversed += " ";
-      console.log("done");
-    }
-
-    console.log(reversed);
-    console.log("reversed");
-
+    let reversed = await get_reversed(phrase);
     let searchRes = await get_search(reversed);
     res.status(200).json({
       items: searchRes.items,
@@ -59,16 +42,22 @@ async function get_search(phrase: string): Promise<any> {
   return data;
 }
 
-async function get_reversed_from_words_api(word: string): Promise<any> {
-  let fetchRes = await fetch(
-    `https://wordsapiv1.p.rapidapi.com/words/${word}/antonyms`,
-    {// @ts-ignore
-      headers: {
-        "X-RapidAPI-Host": "wordsapiv1.p.rapidapi.com",
-        "X-RapidAPI-Key": process.env.RAPID_API_KEY as string,
-      },
-    }
-  );
+async function get_reversed(word: string): Promise<any> {
+  let fetchRes = await fetch("https://api.openai.com/v1/completions", {
+    method: "post",
+    headers: {
+      Accept: "application/json",
+      Authorization:
+        `Bearer ${process.env.OPENAI_API_KEY as string}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      model: "text-davinci-003",
+      prompt: `What is the opposite of "${word}"?`,
+      max_tokens: 4000,
+      temperature: 1.0,
+    }),
+  });
   let data = await fetchRes.json();
-  return data;
+  return data.choices[0].text;
 }
