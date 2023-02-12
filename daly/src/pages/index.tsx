@@ -19,9 +19,9 @@ export default function Home() {
     <Container title="Search – Elgoog"
       description="ELGOOG">
   <div className=' pt-60 bg-[#f9fafb] dark:bg-[#131415] '>
-        <div className='pb-40'>
+        <div className=' pb-72'>
         <div className="flex flex-col justify-center max-w-3xl w-full mx-auto mb-16 border-gray-200 dark:border-gray-700">
-        <div className=' pb-[100%]'>
+        <div className=''>
         <Homepage/>
         </div>
         <div>
@@ -55,6 +55,8 @@ export default function Home() {
               </div>
            </div>
           ))}
+          <div className=''>
+          </div>
         </div>
         </div>
         </div> 
