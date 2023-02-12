@@ -2,7 +2,7 @@
 import { reverse } from "dns";
 import type { NextApiRequest, NextApiResponse } from "next";
 
-interface Item {
+export interface Item {
   link: string;
   htmlTitle: string;
   displayLink: string;

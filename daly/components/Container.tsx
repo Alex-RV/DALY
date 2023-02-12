@@ -31,6 +31,7 @@ function NavItem({ href, text }) {
 export default function Container(props) {
   const [mounted, setMounted] = useState(false);
   const { resolvedTheme, setTheme } = useTheme();
+  const [searchResponseData, setSearchResponseData]= useState("");
   // After mounting, we have access to the theme
   useEffect(() => setMounted(true), []);
 
@@ -57,7 +58,8 @@ export default function Container(props) {
             <NavItem href="/about" text="About" />
             <NavItem href="/team" text="Team" />
           </div>
-          <SearchForm/>
+          <SearchForm dataCallBack={data => {
+            setSearchResponseData(data.link)}}/>
           <button
             aria-label="Toggle Dark Mode"
             type="button"
