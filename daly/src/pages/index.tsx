@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
+import { useRouter } from 'next/router'
 
 import Container from 'components/Container'
 import Homepage from './Homepage/Homepage'
@@ -12,12 +13,13 @@ import {Item} from './api/get_search'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+  const router = useRouter()
   const [searchResponseData, setSearchResponseData]= useState({items:[]});
   return (
     <div>
         <Container>
         <div className="flex flex-col justify-center max-w-3xl w-full mx-auto mb-16 border-gray-200 dark:border-gray-700">
-        <div className='mb-16'>
+        <div className='mb-16 mt-64'>
         <Homepage/>
         </div>
         <div>
@@ -29,18 +31,22 @@ export default function Home() {
           {searchResponseData.items.map(item => (
             <div className='m-2 mb-4'>
               <div>
-               <a href={item.formattedUrl}>
+               <a href={// @ts-ignore
+               item.formattedUrl}>
               <div className='text-black dark:text-white '>
-                <cite>{item.formattedUrl}</cite>
+                <cite>{// @ts-ignore
+                item.formattedUrl}</cite>
               </div>
 
               <div className='text-blue-600 dark:text-blue-400 text-xl'>
-              {item.title}
+              {// @ts-ignore
+              item.title}
               </div>
               </a>
               </div>
               <div className='text-black dark:text-gray-400 '>
-                <h1>{item.snippet}</h1>
+                <h1>{// @ts-ignore
+                item.snippet}</h1>
               </div>
            </div>
           ))}
