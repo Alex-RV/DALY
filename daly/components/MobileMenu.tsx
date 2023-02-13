@@ -23,12 +23,12 @@ export default function MobileMenu() {
   }, []);
 
   return (
-    <>
-    <div className='visible md:hidden'>
+    <div className='visible md:hidden flex flex-col'>
+    <div className='mr-6 flex'>
       <button
         className={cn(
             styles.burger,
-             'bg-transparent w-[40px] h-[40px] relative visible md:hidden')}
+             'bg-transparent w-[40px] h-[40px] absolute visible md:hidden')}
         aria-label="Toggle menu"
         type="button"
         onClick={toggleMenu}
@@ -36,16 +36,18 @@ export default function MobileMenu() {
         <MenuIcon data-hide={isMenuOpen} />
         <CrossIcon data-hide={!isMenuOpen} />
       </button>
+    </div>
+    <div className='flex flex-col ml-12 absolute -top-[350%] w-full max-w-[80%]'>
       {isMenuOpen && (
         <ul
           className={cn(
             styles.menu,
-            'flex flex-col absolute bg-gray-100 dark:bg-gray-900',
+            'flex -top-[350%] flex-col rounded-t-2xl absolute bg-gray-100 dark:bg-gray-900',
             styles.menuRendered
           )}
         >
           <li
-            className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
+            className="border-b border-gray-300 pl-[50%] dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
             style={{ transitionDelay: '150ms' }}
           >
             <Link href="/" className="flex w-auto pb-4">
@@ -53,7 +55,7 @@ export default function MobileMenu() {
             </Link>
           </li>
           <li
-            className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
+            className="border-b border-gray-300 pl-[50%] dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
             style={{ transitionDelay: '175ms' }}
           >
             <Link href="/about" className="flex w-auto pb-4">
@@ -61,17 +63,17 @@ export default function MobileMenu() {
             </Link>
           </li>
           <li
-            className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
+            className="border-b border-gray-300 pl-[50%] dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
             style={{ transitionDelay: '200ms' }}
           >
-            <Link href="/projects" className="flex w-auto pb-4">
+            <Link href="/team" className="flex w-auto pb-4">
               Team
             </Link>
           </li>
         </ul>
        )} 
+       </div>
     </div>
-    </>
   );
 }
 
