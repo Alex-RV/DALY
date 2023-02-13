@@ -37,7 +37,7 @@ export default function MobileMenu() {
         <CrossIcon data-hide={!isMenuOpen} />
       </button>
     </div>
-    <div className='flex flex-col ml-12 absolute -top-[350%] w-full max-w-[80%]'>
+    <div className='flex flex-col ml-12 absolute -top-[350%] w-full justify-center max-w-[75%]'>
       {isMenuOpen && (
         <ul
           className={cn(
