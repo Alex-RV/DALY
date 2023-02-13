@@ -18,17 +18,23 @@ export default function handler(
     res: NextApiResponse<Data>
 ) {
     (async () => {
-        let phrase = req.body.searchText;
+        let phrase1 = req.body.searchText;
+        var phrase = JSON.parse(JSON.stringify(phrase1));
+
         let newPhrase = "";
 
+        console.log("Input DATA!!", phrase)
         for (let word of phrase.split(" ")) {
+            
             let reversed = await get_reversed_from_words_api(word);
+            if (reversed.antonyms !== undefined){
             if (reversed.antonyms.length == 0) {
                 newPhrase += word;
             } else {
                 newPhrase += reversed.antonyms[0];
             }
-            newPhrase += " ";
+            newPhrase += " "
+            } else{}
         }
 
         let searchRes = await get_search(newPhrase);

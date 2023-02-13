@@ -34,12 +34,12 @@ export default function about() {
           </p>
           <Image
             alt="photo"
-            height={1000}
-            width={1000}
+            height={1500}
+            width={1500}
             src="/screen.png"
             sizes="30vw"
             priority
-            className="rounded-full filter"
+            className=" filter"
           />
         </div>
         </div>

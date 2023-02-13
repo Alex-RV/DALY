@@ -20,7 +20,7 @@ export default function team() {
             src="/screen.png"
             sizes="30vw"
             priority
-            className="rounded-full filter mb-5"
+            className="rounded-3xl filter mb-16"
           />
           <Image
             alt="photo"
@@ -29,7 +29,7 @@ export default function team() {
             src="/screen.png"
             sizes="30vw"
             priority
-            className="rounded-full filter mb-5"
+            className="rounded-3xl filter mb-16"
           />
           <Image
             alt="photo"
@@ -38,15 +38,16 @@ export default function team() {
             src="/screen.png"
             sizes="30vw"
             priority
-            className="rounded-full filter mb-16"
-          /><Image
+            className="rounded-3xl filter mb-16"
+          />
+          <Image
           alt="photo"
           height={300}
           width={300}
           src="/screen.png"
           sizes="30vw"
           priority
-          className="rounded-full filter mb-16"
+          className="rounded-3xl filter mb-16"
         />
           </div>
           </div>
