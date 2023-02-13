@@ -37,9 +37,9 @@ export default function SearchForm({dataCallBack}) {
   return (
 <>
 <form 
-onSubmit={handleSubmit}
-className="flex items-center">   
-
+    method="get"
+    onSubmit={handleSubmit}
+    className="flex items-center">
     <label htmlFor="simple-search" className="sr-only">Search</label>
     <div className="relative w-full">
         <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
