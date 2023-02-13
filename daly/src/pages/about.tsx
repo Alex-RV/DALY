@@ -29,7 +29,7 @@ export default function about() {
           <p className="text-gray-600 dark:text-gray-400 mb-4">
           El Goog can be a relief from boredom
           </p>
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-gray-600 dark:text-gray-400 mb-16">
           It also can be a great search engine alternative
           </p>
           <Image
